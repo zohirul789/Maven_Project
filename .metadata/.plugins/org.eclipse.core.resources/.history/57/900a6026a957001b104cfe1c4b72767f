@@ -1,0 +1,50 @@
+package seleniumPrectice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LocatorsConcept {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://app.hubspot.com/login");
+		Thread.sleep(5000);
+		/* 1. tips
+		driver.findElement(By.name("userName")).sendKeys("zohirul789");
+		driver.findElement(By.name("password")).sendKeys("05071988");
+		driver.findElement(By.name("submit")).click();
+		*/
+		
+		//2. tips
+		/* 
+		 * 	WebElement userName=driver.findElement(By.name("userName"));
+			WebElement password=driver.findElement(By.name("password"));
+			WebElement submit=driver.findElement(By.name("submit"));
+		
+			userName.sendKeys("zohirul789");
+			password.sendKeys("05071988");
+			submit.click();
+		*/
+		
+		By userName = By.name("userName");
+		By password = By.name("password");
+		By submit = By.name("submit");
+		
+		driver.findElement(userName).sendKeys("zohirul789");
+		driver.findElement(password).sendKeys("123456");
+		driver.findElement(submit).click();
+		
+		
+
+	}
+
+}

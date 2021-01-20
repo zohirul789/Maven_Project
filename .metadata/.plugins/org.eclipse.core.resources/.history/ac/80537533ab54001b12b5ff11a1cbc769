@@ -1,0 +1,16 @@
+package Selenium_Prectice_Alom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class WebDriverBasic {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.driver", "C:\\\\Users\\\\zohir\\\\geckodriver-Firefox\\\\geckodriver.exe");
+		
+		WebDriver driver = new FirefoxDriver();
+		driver.get("https://www.google.com/");
+
+	}
+
+}

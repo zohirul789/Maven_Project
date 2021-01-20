@@ -1,0 +1,20 @@
+package Selenium_Prectice_Alom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class WebDriverBasic {
+
+	public static void main(String[] args) {
+		//Setup Driver for Windows
+		System.setProperty("webdriver.firefox.driver", "C:\\\\Users\\\\zohir\\\\geckodriver-Firefox\\\\geckodriver.exe");
+		
+		WebDriver driver = new FirefoxDriver();//Top Casting
+		driver.get("https://www.google.com/");
+		String actualtitle = driver.getTitle();
+		System.out.println("Actual Title is: "+actualtitle);
+		driver.quit();
+
+	}
+
+}
